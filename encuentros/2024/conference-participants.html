@@ -241,7 +241,7 @@
                 const firstName = capitalizeFirstLetter(participant.Nombre);
                 const lastName = capitalizeFirstLetter(participant.Apellidos);
                 const university = capitalizeUniversityName(participant.Universidad);
-                participantDiv.textContent = `${firstName} ${lastName} (${university})`;
+                participantDiv.textContent = `- ${firstName} ${lastName} (${university})`;
                 participantsDiv.appendChild(participantDiv);
             });
         }
