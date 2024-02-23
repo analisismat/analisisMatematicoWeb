@@ -212,17 +212,20 @@
 
                 // Assuming the column name for last name is 'LastName'
                 // Sort the participants by last name
-                data.sort((a, b) => a.LastName.localeCompare(b.LastName));
-
+                data.sort((a, b) => {
+  const aLastName = a.Apellidos || '';
+  const bLastName = b.Apellidos || '';
+  return aLastName.localeCompare(bLastName);
+});
                 // Get the div where you want to display the participants
                 const participantsDiv = document.querySelector('#participants');
 
                 // Create a new div for each participant and append it to the participants div
                 data.forEach(participant => {
-                    const participantDiv = document.createElement('div');
-                    participantDiv.textContent = `${participant.FirstName} ${participant.LastName}`;
-                    participantsDiv.appendChild(participantDiv);
-                });
+  const participantDiv = document.createElement('div');
+  participantDiv.textContent = `${participant.Nombre} ${participant.Apellidos}`;
+  participantsDiv.appendChild(participantDiv);
+});
             }
 
             getParticipants();
