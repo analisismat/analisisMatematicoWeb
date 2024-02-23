@@ -19,7 +19,9 @@
     <!-- Script: Animated entrance -->
     <script src="js/animate-in.js"></script>
 
-
+<!-- Include axios and papaparse from a CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
 </head>
 
@@ -120,11 +122,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
-                    <iframe
-                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTFquaFnsWjcND6lyo29s-IIjZz0aq0okIJtn7kRJYQhqYJQUflFMIRavEubar_U7TTwuUBFJ4p5kOj/pubhtml?gid=458473447&single=true&widget=false&headers=false&chrome=false&rm=minimal"
-                        width="100%" height="1700" frameborder="0" align="middle"></iframe>
-
+  <!-- This is where the participants will be displayed -->
+  <div id="participants"></div>
                 </div>
             </div>
         </div>
@@ -202,6 +201,33 @@
             </div>
         </div>
     </footer>
+
+    <script>
+            async function getParticipants() {
+                // Fetch the CSV data
+                const response = await axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vS6T8X8olK6d5ByTpFRk2TNHEYGeS8SjdDRCb6guz99J1_6WXha4CbOzdjveD4bh93KwqSc-XDpS6Kg/pub?gid=1799425409&single=true&output=csv');
+
+                // Parse the CSV data
+                const data = Papa.parse(response.data, { header: true }).data;
+
+                // Assuming the column name for last name is 'LastName'
+                // Sort the participants by last name
+                data.sort((a, b) => a.LastName.localeCompare(b.LastName));
+
+                // Get the div where you want to display the participants
+                const participantsDiv = document.querySelector('#participants');
+
+                // Create a new div for each participant and append it to the participants div
+                data.forEach(participant => {
+                    const participantDiv = document.createElement('div');
+                    participantDiv.textContent = `${participant.FirstName} ${participant.LastName}`;
+                    participantsDiv.appendChild(participantDiv);
+                });
+            }
+
+            getParticipants();
+    </script>
+
     <!-- JavaScript dependencies -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="></script>
