@@ -216,8 +216,13 @@
 
         async function getParticipants() {
             // Fetch the CSV data
-            const response = await axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/pub?gid=510869810&single=true&output=csv');
+            const response = await 
+            //axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/pub?gid=510869810&single=true&output=csv');
+            axios.get('https://docs.google.com/spreadsheets/d/1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/export?format=csv');
 
+                           // https://docs.google.com/spreadsheets/d/1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/export?format=csv
+                            //https://docs.google.com/spreadsheets/d/1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/edit?usp=sharing
+                            //https://docs.google.com/spreadsheets/d/1JI_jagAesNkZK0uWhdwemuDxBW40quosZLXQMfGwz2I/edit?usp=sharing
 
             // Parse the CSV data
             const data = Papa.parse(response.data, { header: true }).data;
