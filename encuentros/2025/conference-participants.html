@@ -216,7 +216,8 @@
 
         async function getParticipants() {
             // Fetch the CSV data
-            const response = await axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTFquaFnsWjcND6lyo29s-IIjZz0aq0okIJtn7kRJYQhqYJQUflFMIRavEubar_U7TTwuUBFJ4p5kOj/pub?gid=458473447&single=true&output=csv');
+            const response = await axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/pub?gid=510869810&single=true&output=csv');
+
 
             // Parse the CSV data
             const data = Papa.parse(response.data, { header: true }).data;
