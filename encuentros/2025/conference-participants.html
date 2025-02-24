@@ -137,6 +137,8 @@
                             <ul>
                                 <li>Salud Bartoll (UPV)&nbsp; <a href="mailto:sbartoll@mat.upv.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
                                 </li>
+                                <li>Christian Cobollo (UPV)&nbsp; <a href="mailto:chcogo@upv.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
+                                </li>
                                 <li>Javier Falcó (UV)&nbsp; <a href="mailto:Francisco.J.Falco@uv.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
                                 </li>
                                 <li> Antoni López (UPV)&nbsp; <a href="mailto:alopezmartinez@mat.upv.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
@@ -203,7 +205,7 @@
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
         }
-        
+
          function capitalizeEverything(string) {
             return string.charAt(0).toUpperCase() + string.slice(1).toUpperCase();
         }
@@ -221,7 +223,7 @@
         async function getParticipants() {
             // Fetch the CSV data
             const response = await
-           
+
             axios.get('https://docs.google.com/spreadsheets/d/1Rx7DU68W4QUo0nxOEWMdl23ofMWNU7XKL1x5Eu_YKMs/export?format=csv');
 
 
