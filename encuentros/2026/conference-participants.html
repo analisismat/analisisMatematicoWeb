@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PAGE settings -->
+    <link rel="icon" href="img/redicon.ico">
+    <title>III Encuentro de la Red de Análisis Matemático y Aplicaciones</title>
+    <meta name="description"
+        content="Lista de participantes del III Encuentro de la Red de Análisis Matemático y Aplicaciones.">
+    <meta name="keywords" content="Escuela-Taller, Analisis matemático, Red de análisis matemático">
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css">
+    <!-- Script: Make my navbar transparent when the document is scrolled to top -->
+    <script src="js/navbar-ontop.js"></script>
+    <!-- Script: Animated entrance -->
+    <script src="js/animate-in.js"></script>
+
+    <!-- Include axios and papaparse from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+</head>
+
+<body class="text-center">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <img id="c_img" class="img-fluid" src="img/logoRED.png" draggable="true" width="50"> <b> Red de Análisis
+                    Matemático y Aplicaciones</b></a>
+            <button class="navbar-toggler navbar-toggler-right p-0 m-0" type="button" data-toggle="collapse"
+                data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="conference-index.html"><i
+                                class="fa d-inline fa-lg fa-briefcase"></i>&nbsp;Encuentro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="school-index.html"><i
+                                class="fa d-inline fa-lg fa-graduation-cap"></i>Escuela-Taller</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar2SupportedContent2" aria-controls="navbar2SupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar2SupportedContent2">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="conference-index.html">Información</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="conference-location.html">Alojamiento y localización</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="conference-speakers.html">Conferenciantes y programa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="conference-participants.html">Participantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="conference-cena.html">Cena del Encuentro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="conference-photos.html">Fotos</a>
+                    </li>
+                </ul>
+                <a class="btn navbar-btn mx-2 text-white btn-outline-light"
+                    href="conference-register.html">Inscripción</a>
+            </div>
+        </div>
+    </nav>
+    <div class="py-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb align-items-start" style="margin-bottom:0px;margin-top:0px">
+                        <li class="breadcrumb-item text-muted"> <a>Conferencias</a></li>
+                        <li class="breadcrumb-item"><a href="../../conferencias-encuentros.html"
+                                class="text-muted">Encuentros</a></li>
+                        <li class="breadcrumb-item"><a href="index.html" class="text-muted">2026</a></li>
+                        <li class="breadcrumb-item"><a href="conference-index.html" class="text-muted">III Encuentro
+                                (Granada)</a></li>
+                        <li class="breadcrumb-item text-warning font-weight-bold">Participantes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cover -->
+    <!-- Parallax section -->
+    <!-- Speakers -->
+    <!-- Schedule -->
+    <!-- Sponsor logos -->
+    <!-- Call to action -->
+    <!-- Footer -->
+    <div class="py-5 text-secondary bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center display-3 text-white">Lista de participantes</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-white">III Encuentro de la Red de Análisis Matemático y Aplicaciones</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- This is where the participants will be displayed -->
+                    <div id="participants"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-md-left text-center p-4 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>Organizadores</h4>
+                    <div class="row">
+                            <ul>
+                                <li> Jerónimo Alaminos Prats (UGR)&nbsp; <a href="mailto:alaminos@ugr.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
+                                </li>
+                                <li>Ginés López Pérez (UGR)&nbsp; <a href="mailto:glopezp@ugr.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
+                                </li>
+                                <li>Miguel Martín Suárez (UGR)&nbsp; <a href="mailto:mmartins@ugr.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
+                                </li>
+                                <li> Abraham Rueda Zoca (UGR)&nbsp; <a href="mailto:abrahamrueda@ugr.es" target="_blank"><i class="fa d-inline fa-lg fa-envelope"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    <div class="col-md-6"> </div>
+                </div>
+            </div>
+            <div class="my-4 col-lg-4"> </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>Comité Científico del Encuentro de la Red de Análisis Matemático</h4>
+                    <div class="row">
+                        <ul class="">
+                            <li class=""> David Alonso (Universidad de Zaragoza)
+                            </li>
+                            <li> Jorge Betancor (Universidad de La Laguna)
+                            </li>
+                            <li> José Bonet (Universitat Politècnica de València)
+                            </li>
+                            <li> María Jesús Carro (Universidad Complutense de Madrid)
+                            </li>
+                            <li> Manuel Contreras (Universidad de Sevilla)
+                            </li>
+                            <li> Eva Gallardo (Universidad Complutense de Madrid)
+                            </li>
+                            <li> Joaquim Ortega-Cerdà (Universitat de Barcelona)
+                            </li>
+                            <li> José Ángel Peláez (Universidad de Málaga)
+                            </li>
+                            <li> Carlos Pérez (Basque Center for Applied Mathematics)
+                            </li>
+                            <li> Alfred Peris (Universitat Politècnica de València)
+                            </li>
+                            <li> María del Carmen Reguera (Universidad de Málaga)
+                            </li>
+                            <li> Luz Roncal (Basque Center for Applied Mathematics)
+                            </li>
+                            <li> Abraham Rueda (Universidad de Murcia)
+                            </li>
+                            <li> Xavier Tolsa (Universitat Autònoma de Barcelona)
+                            </li>
+                            <li> Ana Vargas (Universidad Autónoma de Madrid)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="my-4 col-lg-4">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+        }
+
+         function capitalizeEverything(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1).toUpperCase();
+        }
+
+        function capitalizeUniversityName(university) {
+            return university.split(' ').map(word => {
+                if (word.toLowerCase() === 'de' || word.toLowerCase() === 'of') {
+                    return word.toLowerCase();
+                } else {
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                }
+            }).join(' ');
+        }
+
+        async function getParticipants() {
+            // Fetch the CSV data
+            const response = await
+
+            axios.get('https://docs.google.com/spreadsheets/d/1CkDtMELl4p2HGoHagBUnuTB8R-c9AmC5x-9S4DHiOmU/export?format=csv');
+
+
+            // Parse the CSV data
+            const data = Papa.parse(response.data, { header: true }).data;
+
+            // Assuming the column name for last name is 'LastName'
+            // Sort the participants by last name
+            data.sort((a, b) => {
+                const aLastName = a.Apellidos || '';
+                const bLastName = b.Apellidos || '';
+                return aLastName.localeCompare(bLastName);
+            });
+            // Get the div where you want to display the participants
+            const participantsDiv = document.querySelector('#participants');
+
+            // Create a new div for each participant and append it to the participants div
+            data.forEach(participant => {
+                const participantDiv = document.createElement('div');
+                participantDiv.style.textAlign = 'left';
+                const firstName = capitalizeFirstLetter(participant.Nombre);
+                const lastName = capitalizeEverything(participant.Apellidos);
+                const university = capitalizeUniversityName(participant.Universidad);
+                participantDiv.textContent = `- ${firstName} ${lastName} (${university})`;
+                participantsDiv.appendChild(participantDiv);
+            });
+        }
+
+        getParticipants();
+    </script>
+
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" crossorigin="anonymous"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" crossorigin="anonymous"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"></script>
+    <!-- Script: Smooth scrolling between anchors in a same page -->
+    <script src="js/smooth-scroll.js"></script>
+</body>
+
+</html> 
