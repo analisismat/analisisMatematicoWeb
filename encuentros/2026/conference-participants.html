@@ -238,8 +238,8 @@
             data.forEach(participant => {
                 const participantDiv = document.createElement('div');
                 participantDiv.style.textAlign = 'left';
-                const firstName = capitalizeFirstLetter(participant.Nombre);
-                const lastName = capitalizeEverything(participant.Apellidos);
+                const firstName = capitalizeUniversityName(participant.Nombre);
+                const lastName = capitalizeUniversityName(participant.Apellidos);
                 const university = capitalizeUniversityName(participant.Universidad);
                 participantDiv.textContent = `- ${firstName} ${lastName} (${university})`;
                 participantsDiv.appendChild(participantDiv);
